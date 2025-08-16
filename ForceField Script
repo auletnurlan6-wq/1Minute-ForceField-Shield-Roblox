@@ -1,0 +1,14 @@
+-- 1 Minute ForceField (manual execute)
+local player = game.Players.LocalPlayer
+local char = player.Character or player.CharacterAdded:Wait()
+
+-- Create forcefield
+local ff = Instance.new("ForceField")
+ff.Parent = char
+
+-- Destroy forcefield after 60 seconds
+task.delay(60, function()
+    if ff then
+        ff:Destroy()
+    end
+end)
